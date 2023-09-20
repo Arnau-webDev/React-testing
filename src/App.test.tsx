@@ -1,4 +1,4 @@
-import { describe, expect, test, vi } from 'vitest';
+import { describe, expect, test } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
 
@@ -13,7 +13,12 @@ describe('App component', () => {
 		render(<App />);
 		const button = screen.getByRole('button');
 
+		expect(button.textContent).toBe('count is 0');
+
 		fireEvent.click(button);
+		fireEvent.click(button);
+
+		expect(button.textContent).toBe('count is 2');
 	});
 });
 
