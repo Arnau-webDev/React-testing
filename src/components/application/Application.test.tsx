@@ -48,10 +48,24 @@ describe('Application', () => {
 		expect(paragraphEl).toBeInTheDocument();
 
 		// getByDisplayValue
-		// getByDisplayValueOptions: selector
 
 		const nameEl4 = screen.getByDisplayValue('Vishwas');
 		expect(nameEl4).toBeInTheDocument();
+
+		// getByAltText
+
+		const imageEl = screen.getByAltText('a person with a laptop');
+		expect(imageEl).toBeInTheDocument();
+        
+		// getByTitle
+
+		const closeEl = screen.getByTitle('close');
+		expect(closeEl).toBeInTheDocument();
+
+		// getByTestId
+
+		const customEl = screen.getByTestId('custom-element');
+		expect(customEl).toBeInTheDocument();
 
 	});
 });
