@@ -30,5 +30,13 @@ describe('Application', () => {
 		expect(jobLocationEl).toBeInTheDocument();
 		expect(termsEl).toBeInTheDocument();
 		expect(submitBtnEl).toBeInTheDocument();
+
+		// getByLabelText
+
+		// getByLabelTextOptions: selector
+
+		const nameEl2 = screen.getByLabelText('Name', { selector: 'input'});
+		expect(nameEl2).toBeInTheDocument();
+
 	});
 });
