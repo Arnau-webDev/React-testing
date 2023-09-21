@@ -6,7 +6,7 @@ describe('Application', () => {
 	test('renders correctly', () => {
 		render(<Application />);
 
-		// getByRole should be your first option for selection DOM nodes in a test
+		// getByRole
 		// getByRoleOptions: name, level, hidden, selected, checked, pressed
 
 		const pageHeading = screen.getByRole('heading', { level: 1});
@@ -67,5 +67,17 @@ describe('Application', () => {
 		const customEl = screen.getByTestId('custom-element');
 		expect(customEl).toBeInTheDocument();
 
+		/*
+            List of priority RTL queries to select DOM nodes
+
+            - getByRole
+            - getByLabelText
+            - getByPlaceholderText
+            - getByText
+            - getByDisplayValue
+            - getByAltText
+            - getByTitle
+            - getByTestId (only if none of the above work. ex: the text of the element is dynamic)
+        */
 	});
 });
