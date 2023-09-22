@@ -41,7 +41,14 @@ describe('Skills', () => {
 	test('does not find Start Learning button in the DOM', () => {
 		render(<Skills skills={skills} />);
 
-		const loginBtn = screen.queryByRole('button', { name: 'Start learning'});
-		expect(loginBtn).not.toBeInTheDocument();
+		const startLearningBtn = screen.queryByRole('button', { name: 'Start learning'});
+		expect(startLearningBtn).not.toBeInTheDocument();
+	});
+
+	test('Start learning button is eventually displayed', async () => {
+		render(<Skills skills={skills} />);
+
+		const startLearningBtn = await screen.findByRole('button', { name: 'Start learning' }, { timeout: 2000});
+		expect(startLearningBtn).toBeInTheDocument();
 	});
 });
