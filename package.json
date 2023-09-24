@@ -9,6 +9,7 @@
     "test": "vitest",
     "coverage": "vitest --coverage",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.{ts,tsx,css,scss}\"",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -31,11 +32,13 @@
     "camelcase": "^6.3.0",
     "cross-fetch": "^4.0.0",
     "eslint": "^8.45.0",
+    "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "jsdom": "^22.1.0",
     "msw": "^1.3.1",
+    "prettier": "^3.0.3",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
     "vitest": "^0.34.3"
