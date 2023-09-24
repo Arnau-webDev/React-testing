@@ -50,6 +50,8 @@ describe('Skills', () => {
 		// const view = render(<Skills skills={skills} />); // Create container for logRoles
 		// logRoles(view.container);
 		// screen.debug();
+		
+		render(<Skills skills={skills} />);
 
 		const startLearningBtn = await screen.findByRole(
 			'button',
