@@ -6,12 +6,15 @@ import {
 	afterEach,
 	beforeAll,
 } from 'vitest';
-import { fetch } from 'cross-fetch';
+import { fetch, Headers, Request, Response } from 'cross-fetch';
   
 import { server } from '../mocks/server';
   
-// Add `fetch` polyfill.
+// Add `fetch`and other necessary polyfills
 global.fetch = fetch;
+global.Headers = Headers;
+global.Request = Request;
+global.Response = Response;
 
 // Establish API mocking before all tests.
 beforeAll(() => server.listen({ onUnhandledRequest: 'error' }));
