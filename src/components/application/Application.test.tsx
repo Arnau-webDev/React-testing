@@ -9,7 +9,7 @@ describe('Application', () => {
 		// getByRole
 		// getByRoleOptions: name, level, hidden, selected, checked, pressed
 
-		const pageHeading = screen.getByRole('heading', { level: 1});
+		const pageHeading = screen.getByRole('heading', { level: 1 });
 
 		const pageSectionHeading = screen.getByRole('heading', { level: 2 });
 
@@ -20,7 +20,7 @@ describe('Application', () => {
 		const jobLocationEl = screen.getByRole('combobox');
 		const termsEl = screen.getByRole('checkbox');
 		const submitBtnEl = screen.getByRole('button');
-        
+
 		expect(pageHeading).toBeInTheDocument();
 		expect(pageSectionHeading).toBeInTheDocument();
 
@@ -33,7 +33,7 @@ describe('Application', () => {
 		// getByLabelText
 		// getByLabelTextOptions: selector
 
-		const nameEl2 = screen.getByLabelText('Name', { selector: 'input'});
+		const nameEl2 = screen.getByLabelText('Name', { selector: 'input' });
 		expect(nameEl2).toBeInTheDocument();
 
 		// getByPlaceholderText
@@ -56,7 +56,7 @@ describe('Application', () => {
 
 		const imageEl = screen.getByAltText('a person with a laptop');
 		expect(imageEl).toBeInTheDocument();
-        
+
 		// getByTitle
 
 		const closeEl = screen.getByTitle('close');

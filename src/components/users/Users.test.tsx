@@ -13,13 +13,13 @@ describe('Users', () => {
 		expect(textEl).toBeInTheDocument();
 	});
 
-	test('renders a list of users', async () => { 
+	test('renders a list of users', async () => {
 		render(<Users />);
 		const usersList = await screen.findAllByRole('listitem');
 		expect(usersList).toHaveLength(users.length);
 	});
 
-	test('renders error', async () => { 
+	test('renders error', async () => {
 		server.use(errorHandler);
 		render(<Users />);
 
@@ -27,4 +27,3 @@ describe('Users', () => {
 		expect(errorText).toBeInTheDocument();
 	});
 });
-

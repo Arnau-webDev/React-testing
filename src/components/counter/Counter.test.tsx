@@ -3,30 +3,29 @@ import user from '@testing-library/user-event';
 import { describe, expect, test } from 'vitest';
 import { Counter } from './Counter';
 
-
 describe('Counter', () => {
 	test('renders correctly', () => {
 		render(<Counter />);
 
 		const countEl = screen.getByRole('heading');
-		const incrementBtn = screen.getByRole('button', { name: 'Increment'});
+		const incrementBtn = screen.getByRole('button', { name: 'Increment' });
 
 		expect(countEl).toBeInTheDocument();
 		expect(incrementBtn).toBeInTheDocument();
 	});
 
-	test('renders a count of 0', () => { 
+	test('renders a count of 0', () => {
 		render(<Counter />);
 
 		const countEl = screen.getByRole('heading');
 		expect(countEl).toHaveTextContent('0');
 	});
 
-	test('counter increases by 1 when user clicks', async () => { 
+	test('counter increases by 1 when user clicks', async () => {
 		user.setup();
 		render(<Counter />);
 
-		const incrementBtn = screen.getByRole('button', { name: 'Increment'});
+		const incrementBtn = screen.getByRole('button', { name: 'Increment' });
 		const countEl = screen.getByRole('heading');
 
 		expect(countEl).toHaveTextContent('0');
@@ -36,7 +35,7 @@ describe('Counter', () => {
 		expect(countEl).toHaveTextContent('1');
 	});
 
-	test('renders a count of 10 after clicking the set button', async () => { 
+	test('renders a count of 10 after clicking the set button', async () => {
 		user.setup();
 		render(<Counter />);
 
@@ -55,7 +54,7 @@ describe('Counter', () => {
 		expect(countEl).toHaveTextContent(increaseAmount);
 	});
 
-	test('elements are focused in the right order', async () => { 
+	test('elements are focused in the right order', async () => {
 		user.setup();
 		render(<Counter />);
 

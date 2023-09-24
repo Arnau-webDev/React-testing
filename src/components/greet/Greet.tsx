@@ -1,12 +1,9 @@
-
 type Props = {
-    name?: string
-}
+	name?: string;
+};
 
 const Greet = ({ name }: Props) => {
-	return (
-		<div>Hello {name}</div>
-	);
+	return <div>Hello {name}</div>;
 };
 
 export default Greet;

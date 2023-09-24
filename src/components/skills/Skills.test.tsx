@@ -2,7 +2,6 @@ import { fireEvent, render, screen, logRoles } from '@testing-library/react';
 import { describe, expect, test } from 'vitest';
 import { Skills } from './Skills';
 
-
 describe('Skills', () => {
 	const skills = ['HTML', 'CSS', 'Javascript'];
 
@@ -15,7 +14,7 @@ describe('Skills', () => {
 
 	test('renders a list of skills', () => {
 		render(<Skills skills={skills} />);
-		
+
 		const listItemElements = screen.getAllByRole('listitem');
 		expect(listItemElements).toHaveLength(skills.length);
 	});
@@ -41,7 +40,9 @@ describe('Skills', () => {
 	test('does not find Start Learning button in the DOM', () => {
 		render(<Skills skills={skills} />);
 
-		const startLearningBtn = screen.queryByRole('button', { name: 'Start learning'});
+		const startLearningBtn = screen.queryByRole('button', {
+			name: 'Start learning',
+		});
 		expect(startLearningBtn).not.toBeInTheDocument();
 	});
 
@@ -50,7 +51,11 @@ describe('Skills', () => {
 		logRoles(view.container);
 		// screen.debug();
 
-		const startLearningBtn = await screen.findByRole('button', { name: 'Start learning' }, { timeout: 2000});
+		const startLearningBtn = await screen.findByRole(
+			'button',
+			{ name: 'Start learning' },
+			{ timeout: 2000 },
+		);
 		// screen.debug();
 
 		expect(startLearningBtn).toBeInTheDocument();

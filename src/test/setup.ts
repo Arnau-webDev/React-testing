@@ -1,15 +1,11 @@
 import '@testing-library/jest-dom';
 
 // tests/setup.ts
-import {
-	afterAll,
-	afterEach,
-	beforeAll,
-} from 'vitest';
+import { afterAll, afterEach, beforeAll } from 'vitest';
 import { fetch, Headers, Request, Response } from 'cross-fetch';
-  
+
 import { server } from '../mocks/server';
-  
+
 // Add `fetch`and other necessary polyfills
 global.fetch = fetch;
 global.Headers = Headers;

@@ -1,4 +1,3 @@
-
 export const users = [
 	{
 		name: 'Bruce Wayne',
