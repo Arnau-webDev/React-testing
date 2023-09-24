@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, logRoles } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, test } from 'vitest';
 import { Skills } from './Skills';
 
@@ -47,8 +47,8 @@ describe('Skills', () => {
 	});
 
 	test('Start learning button is eventually displayed', async () => {
-		const view = render(<Skills skills={skills} />);
-		logRoles(view.container);
+		// const view = render(<Skills skills={skills} />); // Create container for logRoles
+		// logRoles(view.container);
 		// screen.debug();
 
 		const startLearningBtn = await screen.findByRole(
